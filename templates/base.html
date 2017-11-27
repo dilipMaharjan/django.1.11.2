@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django1.11.2|{% block title%}{% endblock%}</title>
+    {% include 'includes/css.html'%}
+</head>
+<body>
+<div class="container">
+    {% include 'includes/nav.html' %}
+    {% block content %}
+    {% endblock %}
+</div>
+{% include 'includes/js.html' %}
+</body>
+</html>
