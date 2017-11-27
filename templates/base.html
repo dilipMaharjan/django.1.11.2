@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Django1.11.2|{% block title%}{% endblock%}</title>
+    {% include 'includes/css.html'%}
 </head>
 <body>
-<h1>Django 1.11.2</h1>
-
-{%if context%}
-<h2>
-    {{context}}
-</h2>
-{% endif %}
+<div class="container">
+    {% include 'includes/nav.html' %}
+    {% block content %}
+    {% endblock %}
+</div>
+{% include 'includes/js.html' %}
 </body>
 </html>
