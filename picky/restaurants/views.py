@@ -1,24 +1,13 @@
-from django.shortcuts import render
-from django.views import View
 from django.views.generic import TemplateView
 
 
-def home(request):
-    return render(request, 'home.html', {"title": "Home"})
+class HomeView(TemplateView):
+    template_name = 'home.html'
 
 
-def about(request):
-    return render(request, 'about.html', {"title": "About"})
+class AboutView(TemplateView):
+    template_name = 'about.html'
 
 
-def contact(request):
-    return render(request, 'contact.html', {"title": "Contact"})
-
-
-class ContactView(View):
-    def get(self, request):
-        return render(request, 'contact.html', {"title": "Contact"})
-
-
-class ContactTemplateView(TemplateView):
-        template_name = 'contact.html'
+class ContactView(TemplateView):
+    template_name = 'contact.html'
