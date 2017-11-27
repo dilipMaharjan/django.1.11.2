@@ -6,5 +6,11 @@
 </head>
 <body>
 <h1>Django 1.11.2</h1>
+
+{%if context%}
+<h2>
+    {{context}}
+</h2>
+{% endif %}
 </body>
 </html>
