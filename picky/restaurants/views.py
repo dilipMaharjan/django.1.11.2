@@ -1,22 +1,7 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from .models import RestaurantLocation
 
-
-class HomeView(TemplateView):
-    template_name = 'home.html'
-
-    def get_context_data(self, *args, **kwargs):
-        return {"title": "Home"}
-
-
-class AboutView(TemplateView):
-    template_name = 'about.html'
-
-    def get_context_data(self, *args, **kwargs):
-        return {"title": "About"}
-
-
-class ContactView(TemplateView):
-    template_name = 'contact.html'
-
-    def get_context_data(self, *args, **kwargs):
-        return {"title": "Contact"}
+def restaurant_list(request):
+    template='restaurants/restaurant_list.html'
+    restaurants=RestaurantLocation.objects.all()
+    return render(request,template,{"restaurants":restaurants})

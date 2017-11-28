@@ -1,0 +1,11 @@
+ {% extends 'base.html' %} {% block title %} restaurants {% endblock title %} {% block content %}
+<ul>
+    {% for restaurant in restaurants %}
+    <li>
+        {{restaurant.name}} {{restaurant.location}} {{restaurant.category}} {{restaurant.updated}}
+    </li>
+    {% endfor %}
+
+
+</ul>
+{% endblock content %}
