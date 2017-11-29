@@ -1,8 +1,8 @@
  {% extends 'base.html' %} {% block title %} restaurants {% endblock title %} {% block content %}
 <ul>
-    {% for restaurant in restaurants %}
+    {% for restaurant in object_list %}
     <li>
-        {{restaurant.name}} {{restaurant.location}} {{restaurant.category}} {{restaurant.updated}}
+        {{restaurant.name}} {{restaurant.location}} {{restaurant.category}} {{restaurant.timestamp}}{{restaurant.updated}}
     </li>
     {% endfor %}
 

@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from picky.restaurants.views import restaurant_list
+from picky.restaurants.views import RestaurantListView, RestaurantDetailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^restaurants/$', restaurant_list)
+    url(r'^$', RestaurantListView.as_view()),
+    # url(r'^restaurants/(?P<slug>\w+)/$', RestaurantListView.as_view()),
+    url(r'^restaurants/(?P<pk>\d+)/$', RestaurantDetailView.as_view())
 ]
