@@ -24,7 +24,7 @@ class RestaurantListView(ListView):
 
 
 class RestaurantDetailView(DetailView):
-    queryset = RestaurantLocation.objects.all()
+    queryset = RestaurantLocation.objects.filter(slug=)
 
     # def get_context_data(self, *args, **kwargs):
     #     return super(RestaurantDetailView, self).get_context_data(*args, **kwargs)
