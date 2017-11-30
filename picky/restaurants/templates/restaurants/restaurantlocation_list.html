@@ -2,7 +2,7 @@
 <ul>
     {% for restaurant in object_list %}
     <li>
-        {{restaurant.name}} {{restaurant.location}} {{restaurant.category}} {{restaurant.timestamp}}{{restaurant.updated}}
+        <a href='/restaurants/{{restaurant.slug}}/'>{{restaurant.name}}</a> {{restaurant.location}} {{restaurant.category}} {{restaurant.timestamp}}{{restaurant.updated}}
     </li>
     {% endfor %}
 
