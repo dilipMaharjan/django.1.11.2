@@ -3,11 +3,11 @@
 <ul>
     {% for item in object_list %}
     <li>
-        <a href='#'>{{item.name}}</a>
+        <a href='#'>{{item.name}}</a><br/>
 
         {% if item.get_contents %} Contents
         <ul>
-            {% for content in item.contents %}
+            {% for content in item.get_contents %}
             <li>{{content}}</li>
             {% endfor %}
         </ul>
@@ -15,7 +15,7 @@
         {% endif %} {% if item.get_excludes %} Excludes
         <ul>
 
-            {% for exclude in item.excludes %}
+            {% for exclude in item.get_excludes %}
             <li>{{exclude}}</li>
             {% endfor %}
         </ul>
