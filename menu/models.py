@@ -7,6 +7,7 @@ class Item(models.Model):
     restaurant=models.ForeignKey(RestaurantLocation)
     name = models.CharField(max_length=50)
     contents = models.TextField(help_text='Separate with comma')
+    public = models.BooleanField(default=True)
     excludes = models.TextField(blank=True,null=True,help_text='Separate with comma')
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
