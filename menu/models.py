@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from restaurants.models import RestaurantLocation
+from django.core.urlresolvers import reverse
 
 class Item(models.Model):
     user=models.ForeignKey(settings.AUTH_USER_MODEL)
@@ -19,6 +20,10 @@ class Item(models.Model):
         return self.contents.split(',')
     def get_excludes(self):
         return self.excludes.split(',')
+
+    def get_absolute_url(self): 
+        return reverse('menus:detail', kwargs={'pk': self.pk})
+
     class Meta:
         ordering=['-timestamp','-updated']
 
