@@ -1,10 +1,11 @@
 from django.db import models
 from django.db.models.signals import pre_save, post_save
-
+from django.conf import settings
 from .utils import unique_slug_generator
 
 
 class RestaurantLocation(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
     name = models.CharField(max_length=120)
     location = models.CharField(max_length=120, null=True, blank=True)
     category = models.CharField(max_length=120, null=True, blank=True)
